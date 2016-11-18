@@ -1,26 +1,4 @@
 "use strict";
-var Employee = (function () {
-    function Employee() {
-    }
-    Employee.prototype.addToSchedule = function () {
-        console.log('Employee added to schedule.');
-    };
-    Employee.prototype.logTitle = function () {
-        ;
-        console.log("Employee has the title " + this.title + ".");
-    };
-    return Employee;
-}());
-exports.Employee = Employee;
-var Researcher = (function () {
-    function Researcher() {
-    }
-    Researcher.prototype.doResearch = function (topic) {
-        console.log("Doing research on " + topic + ".");
-    };
-    return Researcher;
-}());
-exports.Researcher = Researcher;
 var UniversityLibrarian = (function () {
     function UniversityLibrarian() {
     }
