@@ -21,9 +21,16 @@ var Researcher = (function () {
     return Researcher;
 }());
 exports.Researcher = Researcher;
+exports.CLASS_INFO = Symbol();
 var UniversityLibrarian = (function () {
     function UniversityLibrarian() {
     }
+    UniversityLibrarian.prototype[exports.CLASS_INFO] = function () {
+        console.log('This class represents a UniversityLibrarian.');
+    };
+    UniversityLibrarian.prototype[Symbol.hasInstance] = function (obj) {
+        return obj.hasOwnProperty('name') && obj.hasOwnProperty('assistCustomer');
+    };
     UniversityLibrarian.prototype.assistCustomer = function (custName) {
         console.log(this.name + ' is assisting ' + custName);
     };

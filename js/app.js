@@ -155,23 +155,46 @@ function logVisitor(param) {
 // logVisitor(5);
 // logVisitor('Leigh Ann');
 var lib = new classes_1.UniversityLibrarian(); // PublicLibrarian();
-if (lib instanceof classes_1.UniversityLibrarian) {
-    lib.assistCustomer('dan');
-}
-if (lib instanceof classes_1.PublicLibrarian) {
-    lib.teachCommunity();
-}
+// if (lib instanceof UniversityLibrarian) {
+//     lib.assistCustomer('dan');
+// }
+// if (lib instanceof PublicLibrarian) {
+//     lib.teachCommunity();
+// }
 //custom type guards
 function isBook(text) {
     return text.author !== undefined;
 }
 var readingMaterial3 = util.GetAllBooks()[0];
 var reading4 = util.GetAllMagazines()[0];
-if (isBook(reading4)) {
-    console.log("The book's author is " + reading4.author + ".");
+// if(isBook(reading4)) {
+//     console.log(`The book's author is ${reading4.author}.`);
+// }
+// else {
+//     console.log(`The magazine's publisher is ${reading4.publisher}.`);
+// }
+//symbols
+var mySymbol = Symbol('first_symbol');
+var anotherSymbol = Symbol('first_symbol');
+//console.log(mySymbol === anotherSymbol);
+//console.log(typeof mySymbol);
+var myObject = (_b = {},
+    _b[mySymbol] = 'value for my symbol key',
+    _b
+);
+//console.log(myObject[mySymbol]);
+var librarian2 = new classes_1.UniversityLibrarian();
+//librarian2[CLASS_INFO]();
+var libraryCustomer = {
+    name: 'Thorne',
+    assistCustomer: function (custName) { return console.log("Assisting " + custName); }
+};
+libraryCustomer.assistCustomer('danson');
+if (libraryCustomer instanceof classes_1.UniversityLibrarian) {
+    console.log('A helpful librarian.');
 }
 else {
-    console.log("The magazine's publisher is " + reading4.publisher + ".");
+    console.log('Not a librarian.');
 }
-//symbols
+var _b;
 //# sourceMappingURL=app.js.map

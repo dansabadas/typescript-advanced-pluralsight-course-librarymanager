@@ -1,6 +1,6 @@
 import { Category } from './enums';
 import { Book, Logger, Author, Librarian, Magazine } from './interfaces';
-import { UniversityLibrarian, ReferenceItem, Employee, Researcher, PublicLibrarian } from './classes';
+import { CLASS_INFO, UniversityLibrarian, ReferenceItem, Employee, Researcher, PublicLibrarian } from './classes';
 import * as util from './lib/utilityFunctions';
 import './LibrarianExtension';
 
@@ -177,12 +177,12 @@ function logVisitor(param: number | string) {
 
 let lib: Librarian = new UniversityLibrarian();// PublicLibrarian();
 
-if (lib instanceof UniversityLibrarian) {
-    lib.assistCustomer('dan');
-}
-if (lib instanceof PublicLibrarian) {
-    lib.teachCommunity();
-}
+// if (lib instanceof UniversityLibrarian) {
+//     lib.assistCustomer('dan');
+// }
+// if (lib instanceof PublicLibrarian) {
+//     lib.teachCommunity();
+// }
 
 //custom type guards
 function isBook(text: Book | Magazine): text is Book {
@@ -193,11 +193,38 @@ let readingMaterial3: Book | Magazine = util.GetAllBooks()[0];
 
 let reading4 = util.GetAllMagazines()[0];
 
-if(isBook(reading4)) {
-    console.log(`The book's author is ${reading4.author}.`);
-}
-else {
-    console.log(`The magazine's publisher is ${reading4.publisher}.`);
-}
+// if(isBook(reading4)) {
+//     console.log(`The book's author is ${reading4.author}.`);
+// }
+// else {
+//     console.log(`The magazine's publisher is ${reading4.publisher}.`);
+// }
 
 //symbols
+let mySymbol = Symbol('first_symbol');
+let anotherSymbol = Symbol('first_symbol');
+
+//console.log(mySymbol === anotherSymbol);
+//console.log(typeof mySymbol);
+
+let myObject = {
+    [mySymbol]: 'value for my symbol key'
+}
+
+//console.log(myObject[mySymbol]);
+
+let librarian2 = new UniversityLibrarian();
+//librarian2[CLASS_INFO]();
+
+let libraryCustomer = {
+    name: 'Thorne',
+    assistCustomer: (custName: string) => console.log(`Assisting ${custName}`)
+}
+
+libraryCustomer.assistCustomer('danson');
+if (libraryCustomer instanceof UniversityLibrarian) {
+    console.log('A helpful librarian.');
+}
+else {
+    console.log('Not a librarian.');
+}
