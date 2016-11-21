@@ -19,7 +19,7 @@ class Researcher {
     }
 }
 
-class UniversityLibrarian implements Interfaces.Librarian, Employee, Researcher {
+export class UniversityLibrarian implements Interfaces.Librarian, Employee, Researcher {
     
     name: string;
     email: string;
@@ -34,6 +34,21 @@ class UniversityLibrarian implements Interfaces.Librarian, Employee, Researcher 
     addToSchedule: () => void;
     logTitle: () => void;
     doResearch: (topic: string) => void;   
+}
+
+export class PublicLibrarian implements Interfaces.Librarian {
+
+    name: string;
+    email: string;
+    department: string;
+
+    assistCustomer(custName: string) {
+        console.log('Assisting customer.');
+    }
+
+    teachCommunity() {
+        console.log('Teaching community.');
+    }
 }
 
 abstract class ReferenceItem {

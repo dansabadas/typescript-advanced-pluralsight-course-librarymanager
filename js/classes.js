@@ -30,6 +30,19 @@ var UniversityLibrarian = (function () {
     return UniversityLibrarian;
 }());
 exports.UniversityLibrarian = UniversityLibrarian;
+exports.UniversityLibrarian = UniversityLibrarian;
+var PublicLibrarian = (function () {
+    function PublicLibrarian() {
+    }
+    PublicLibrarian.prototype.assistCustomer = function (custName) {
+        console.log('Assisting customer.');
+    };
+    PublicLibrarian.prototype.teachCommunity = function () {
+        console.log('Teaching community.');
+    };
+    return PublicLibrarian;
+}());
+exports.PublicLibrarian = PublicLibrarian;
 var ReferenceItem = (function () {
     function ReferenceItem(title, year) {
         this.title = title;
